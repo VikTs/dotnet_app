@@ -1,0 +1,16 @@
+<h1 id="tableLabel">Todo list</h1>
+
+<table *ngIf="(todos$ | async) as todos" class='table table-striped' aria-labelledby="tableLabel">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>IsComplete</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let todo of todos">
+      <td>{{ todo.name }}</td>
+      <td>{{ todo.isComplete ? '&#10003;' : '-' }}</td>
+    </tr>
+  </tbody>
+</table>

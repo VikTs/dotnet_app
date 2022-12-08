@@ -1,0 +1,16 @@
+<h1>Sport list</h1>
+
+<table *ngIf="(sportList$ | async) as sportList" class='table table-striped' aria-labelledby="tableLabel">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let sportItem of sportList">
+        <td>{{ sportItem.name }}</td>
+        <td>{{ sportItem.description }}</td>
+      </tr>
+    </tbody>
+  </table>
